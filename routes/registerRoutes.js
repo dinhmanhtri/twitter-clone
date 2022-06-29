@@ -35,9 +35,10 @@ router.post("/", async (req, res, next) => {
       // No user found
       let data = req.body;
       data.password = await bcrypt.hash(password, 10);
-      
+
       User.create(data).then((user) => {
-        console.log(user);
+        req.session.user = user;
+        return res.redirect("/");
       });
     } else {
       // User found
