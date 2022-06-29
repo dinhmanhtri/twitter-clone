@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const DB_URL = `mongodb://manhtri:123456@127.0.0.1:27017/twitter_clone_db`;
-
+const DB_URL = `mongodb://manhtri:123456@127.0.0.1:27017/twitter_clone`;
 class Database {
   constructor() {
     this.connect();
